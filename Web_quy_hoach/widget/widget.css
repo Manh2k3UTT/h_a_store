@@ -1,0 +1,207 @@
+/* Thanh công cụ dọc góc trên bên phải */
+.map-widget-bar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: #ffffff;
+    padding: 6px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e0e0e0;
+
+    height: auto;
+    max-height: none;
+    overflow: visible;
+}
+
+/* Nút bấm tổng quan */
+.widget-btn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Ký hiệu màu đen */
+.widget-icon {
+    width: 20px;
+    height: 20px;
+    color: #1a1a1a;
+}
+
+/* Trạng thái Hover & Active */
+.widget-btn:hover:not(:disabled) {
+    background-color: #f2f2f2;
+}
+
+.widget-btn:active:not(:disabled) {
+    background-color: #e5e5e5;
+    transform: scale(0.96);
+}
+
+/* Trạng thái bị vô hiệu hóa (disabled) */
+.widget-btn:disabled {
+    cursor: not-allowed;
+    background-color: #ffffff;
+}
+
+.widget-btn:disabled .widget-icon {
+    color: #cccccc;
+}
+
+/* Nút Bỏ thao tác */
+.widget-btn.btn-cancel:hover:not(:disabled) {
+    background-color: #fbe9e7;
+}
+
+.widget-btn.btn-cancel:hover:not(:disabled) .widget-icon {
+    color: #d32f2f;
+}
+
+/* Modal Popup Chia Sẻ (Nền trắng, chữ đen) */
+.widget-modal.hidden {
+    display: none !important;
+}
+
+.widget-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 9999 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.widget-modal-content {
+    background: #ffffff;
+    width: 90%;
+    max-width: 400px;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid #e0e0e0;
+    color: #1a1a1a;
+    font-family: Arial, sans-serif;
+}
+
+.widget-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 14px;
+    color: #1a1a1a;
+}
+
+.widget-modal-header button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #666666;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.widget-modal-header button:hover {
+    color: #000000;
+}
+
+.widget-modal-body {
+    display: flex;
+    gap: 8px;
+}
+
+.widget-modal-body input {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+    background: #f9f9f9;
+    color: #1a1a1a;
+}
+
+.widget-modal-body input:focus {
+    border-color: #000000;
+    background: #ffffff;
+}
+
+.widget-modal-body button {
+    padding: 8px 14px;
+    background: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.widget-modal-body button:hover {
+    background: #333333;
+}
+
+/* Kiểu dáng nhãn đo đạc */
+.measure-tooltip {
+    background: transparent;
+    border: none;
+}
+
+.measure-tooltip span {
+    display: inline-block;
+    padding: 3px 8px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 4px;
+    white-space: nowrap;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    pointer-events: none;
+}
+
+/* Nhãn diện tích ở trung tâm hình */
+.measure-area-label span,
+.measure-area-label-final span {
+    background-color: #1677ff;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+/* Nhãn độ dài trên các cạnh */
+.measure-edge-label span {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border: 1px solid #1677ff;
+    font-size: 10px;
+}
+
+/* Nhãn tổng chiều dài ở điểm cuối */
+.measure-total-length-label span {
+    background-color: #ff4d4f;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+/* Nhãn khoảng cách tạm thời chạy theo chuột */
+.measure-edge-label-live span {
+    background-color: #fff1f0;
+    color: #cf1322;
+    border: 1px dashed #ff4d4f;
+    font-size: 10px;
+}
